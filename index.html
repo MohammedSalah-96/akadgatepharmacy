@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akad Gate Pharmacy</title>
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+  <div class="main-lg vh-100 vw-100 d-none d-md-flex">
+    <!-- Start Left Div -->
+    <div class="left w-50 bg-main-color">
+      <div class="logo text-center">
+        <div class="akad-logo mb-2">
+          <img src="img/logo.png" alt="AKAD GATE PHARMACY">
+        </div>
+        <h1 class="text-white">AKAD GATE PHARMACY</h1>
+      </div>
+      <div class="some-text text-center">
+        <img src="img/vitamin.png" alt="Shopping" height="110">
+        <h2 class="text-white">We Care About You</h2>
+        <p class="text-white-50 px-3">with all the health essentials you need for you and your family</p>
+      </div>
+      <div class="social-apps text-center">
+        <h4 class="mb-3 text-white">Find Us On Social Media Apps</h4>
+        <ul class="social-links">
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright-left text-white">
+        Copyright &copy;2022 All Rights Reserved
+      </div>
+    </div>
+    <!-- End Left Div -->
+    <!-- Start Right Div -->
+    <div class="right w-50">
+      <div class="some-text">
+        <h2 class="text-capitalize text-color-bright">What makes as better,<br /> makes you better</h2>
+        <p>Managing your health and access to care have never been this good, this easy, or this
+          fast.</p>
+      </div>
+      <div class="explore-more">
+        <h2 class="mb-1 text-color-bright">Shop Online From Our Store</h2>
+        <div class="shopping-img">
+          <img src="img/shopping1.png" alt="Online Shopping">
+        </div>
+        <div class="products-btn mt-2">
+          <button id="btn-shop">Shop Now</button>
+        </div>
+      </div>
+      <div class="copyright-right">
+        Developed By <span><a href="#">Kurdish.Dev</a></span>
+      </div>
+    </div>
+    <!-- End Right Div -->
+  </div>
+  <!-- START MOBILE VIEW -->
+  <div class="main-mob vh-100 vw-100 d-md-none p-4">
+    <div class="container d-flex flex-column">
+      <div class="logo text-center">
+        <div class="akad-logo mb-2">
+          <img src="img/mainLogo.png" alt="AKAD GATE PHARMACY" width=100">
+        </div>
+        <!-- <h1 class="fs2">AKAD GATE PHARMACY</h1> -->
+      </div>
+      <div class="some-text text-center">
+        <img src="img/vitamin.png" alt="Shopping" height="110">
+        <h2 class="fs-3">We Care About You</h2>
+        <p class="px-3">with all the health essentials you need for you and your family</p>
+      </div>
+      <div class="explore-more text-center">
+        <h2 class="mb-1 fs-3">Shop Online From Our Store</h2>
+        <div class="shopping-img">
+          <img src="img/shopping-mob.png" alt="Online Shopping">
+        </div>
+        <div class="products-btn mt-2">
+          <button id="btn-shop-mob">Shop Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- START MOBILE VIEW -->
+  <!-- JS Files -->
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    let shopBtn = [document.getElementById("btn-shop"), document.getElementById("btn-shop-mob")];
+
+    shopBtn.forEach(x => {
+      x.onclick = () => window.location.href = 'shopping.html';
+    })
+    // shopBtn.onclick = () => {
+    //   window.location.href = "shopping.html";
+    // }
+  </script>
+</body>
+
+</html>

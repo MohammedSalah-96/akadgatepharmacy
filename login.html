@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akad Gate Pharmacy</title>
+    <link rel="icon" href="https://akadgatepharmacy.com/img/logo.png">
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+    <!-- START LG-SCREEN NAVBAR-->
+    <nav class="navbar navbar-expand-lg w-100 p-0">
+        <div class="container">
+            <a class="navbar-brand p-0 pt-1" href="#">
+                <img src="img/logo.png" alt="Akad Gate Pharmacy" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#brands-section">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#get-in-touch-section">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END LG-SCREEN NAVBAR -->
+
+    <!-- START LOGIN SECTION -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-6 login-form mt-5 mx-auto text-center">
+                <h2 class="text-color-bright mb-5">Login to your account</h2>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                    <label for="emailInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                    <label for="passwordInput">Password</label>
+                </div>
+                <div class="forgot-password mt-1 text-end">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot Password?</a>
+                </div>
+                <button type="button" id="btnLogin" class="btn btn-custom mt-3 py-2 px-4">
+                    Login
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="new-account w-100 mt-5 text-center">
+        Don't Have an Account? Create <a href="register.html">New Account Here</a>
+    </div>
+    <!-- END LOGIN SECTION -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered  ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>
+                        Enter the emaill address associated with your account and we will send you a link to reset your
+                        password
+                    </span>
+                    <div class="form-floating my-3">
+                        <input type="email" class="form-control" id="resetEmailInput" placeholder="name@example.com">
+                        <label for="resetEmailInput">Email address</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FORGOT PASSWORD MODAL -->
+
+    <!-- JS Files -->
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" defer>
+        $('#btnLogin').prop('disabled', true);
+        let emailError = true, passError = true;
+
+        function checkErrors() {
+            if (emailError === true || passError === true) {
+                $('#btnLogin').prop('disabled', true);
+            }
+            else {
+                $('#btnLogin').prop('disabled', false);
+            }
+        }
+
+        checkErrors();
+
+        /* START EMAIL CUSTOM PROPERTIES */
+        function validateEmail() {
+            let email = $('#emailInput').val();
+            // use reular expression
+            let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+            if (reg.test(email)) {
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+
+        $('#emailInput').keyup(function () {
+
+            if (validateEmail()) {
+                $(this).css('border', '2px solid #318237');
+                emailError = false;
+            } else if ($(this).val() === "") {
+                $(this).css('border', '2px solid #ad3b3b');
+                emailError = true;
+            } else {
+                $(this).css('border', '2px solid #ad3b3b');
+                emailError = true;
+            }
+            checkErrors();
+        });
+        /* END EMAIL CUSTOM PROPERTIES */
+
+        $('#passwordInput').keyup(function () {
+
+            if ($(this).val() === "" || $(this).val().length <= 7) {
+                $(this).css('border', '2px solid #ad3b3b');
+                passError = true;
+            } else {
+                $(this).css('border', '2px solid #318237');
+                passError = false;
+            }
+            checkErrors();
+        });
+
+        $('#btnLogin').click(() => {
+            console.log("YEAH, YOU CLICKED");
+        })
+    </script>
+</body>
+
+</html>
